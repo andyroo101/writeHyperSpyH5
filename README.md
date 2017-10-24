@@ -3,6 +3,9 @@ A function for Matlab to write HyperSpy formatted HDF5 files
 
 # Example usage
 Write some example data to `data`, plot it in Matlab and then write it to a HyperSpy format hdf5 file. Here there are two navigation dimensions (x, y) and one signal dimension. This is specified by the `navDim` argument. `scale` and `offset` are for the scaling of each dimension. X and Y will go from 0-30 (scale = 1 and offset = 0), but the signal dimension will go from 10 to 30: (0-100)*0.2 + 10.
+
+The plot (from scatter3) in Matlab looks like this:
+![image](https://user-images.githubusercontent.com/23404786/31942039-e4df8f80-b8bb-11e7-9acd-2ce3a5f7dd0c.png)
 ```
 % Matlab 2 HyperSpy example
 
@@ -19,6 +22,17 @@ scatter3(X(:),Y(:),Z(:),1,data(:),'.');
 
 % write to HyperSpy formatted HDF5 (H5) file
 writeHyperSpyH5('hs_test.hdf5',data,[1 1 0.2],[true true false],[0 0 10]);
+```
+
+To load the file into HyperSpy:
+```
+import hyperspy.api as hs
+%matplotlib qt4
+s = hs.load("hs_test.hdf5")
+# check the contents of s
+s
+#<Signal1D, title: Title, dimensions: (30, 30|100)>
+s.plot()
 ```
 # Details: Args
 ## data
