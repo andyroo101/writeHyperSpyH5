@@ -34,6 +34,10 @@ s
 #<Signal1D, title: Title, dimensions: (30, 30|100)>
 s.plot()
 ```
+
+Your HyperSpy plot should look like this with a navigator and signal plot windows:
+![image](https://user-images.githubusercontent.com/23404786/31942169-5c89404e-b8bc-11e7-8a43-e665860fb15f.png)
+
 # Details: Args
 ## data
 The data you wish to write to file.
@@ -43,3 +47,8 @@ Array with as many dimensions as the data with the scaling value for this axis.
 A logical array which has true if that dimension is a navigation dimension
 ## Offset 
 The numeric offset of this dimension scale.
+
+# Issues
+TODO: Could probably add options to name the axes and add units.
+TODO: Test with the latest version of HyperSpy (1.3)
+TODO: Needs more robustness built in (check file can be opened etc.)
