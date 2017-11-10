@@ -1,6 +1,9 @@
 # writeHyperSpyH5
 A function for Matlab to write HyperSpy formatted HDF5 files
 
+# Installation
+Simply add the writeHyperSpyH5.m and h5writeEnumBoolAtt.m files to the Matlab path, and then use the example below to test it.
+
 # Example usage
 Write some example data to `data`, plot it in Matlab and then write it to a HyperSpy format hdf5 file. Here there are two navigation dimensions (x, y) and one signal dimension. This is specified by the `navDim` argument. `scale` and `offset` are for the scaling of each dimension. X and Y will go from 0-30 (scale = 1 and offset = 0), but the signal dimension will go from 10 to 30: (0-100)*0.2 + 10.
 
